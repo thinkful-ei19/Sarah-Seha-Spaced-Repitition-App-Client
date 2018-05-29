@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import './dashboard.css'
 // import Question from './Question'
 
 export class Dashboard extends React.Component {
@@ -10,13 +11,18 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        console.log(this.props.protectedData);
-        console.log(this.props)
+        // console.log(this.props.protectedData);
+        // console.log(this.props)
         let questions = this.props.protectedData.data.map((question, index) => {
             return(
                 <li key={question.id}><img src={question.image}/></li>
             )
         })
+
+        let currQuestion = this.props.protectedData.data[0];
+
+        console.log(currQuestion);
+
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
@@ -24,9 +30,12 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
-                    {/* <p>Protected Data: {this.props.protectedData.data}</p> */}
-                    <ul>{questions}</ul>
+                    <div className="question-card">
+                        <ul>{questions}</ul>
+                    </div>
                     {/* <Question /> */}
+                    {/* <AnswerForm /> 
+                    <Feedback /> */}
                 </div>
             </div>
         );
