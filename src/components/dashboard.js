@@ -10,13 +10,18 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        console.log(this.props.protectedData);
-        console.log(this.props)
+        // console.log(this.props.protectedData);
+        // console.log(this.props)
         let questions = this.props.protectedData.data.map((question, index) => {
             return(
                 <li key={question.id}><img src={question.image} alt="kitchen-tools"/></li>
             )
         })
+
+        let currQuestion = this.props.protectedData.data[0];
+
+        console.log(currQuestion);
+
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
