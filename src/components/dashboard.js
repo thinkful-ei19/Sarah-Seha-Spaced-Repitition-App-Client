@@ -19,9 +19,9 @@ export class Dashboard extends React.Component {
             )
         }) 
 
-        // let currQuestion = this.props.protectedData.data[0];
+        let currQuestion = this.props.protectedData.data[0];
 
-        // console.log(currQuestion);
+        console.log(currQuestion);
 
         return (
             <div className="dashboard">
@@ -46,7 +46,7 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastname}`,
         protectedData: state.protectedData,
-        //answer: state.protectedData.data.answer,
+        // answer: state.protectedData.data.answer,
         questions: state.questions
     };
 };
