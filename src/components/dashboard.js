@@ -12,11 +12,11 @@ export class Dashboard extends React.Component {
     render() {
         console.log(this.props.protectedData);
         console.log(this.props)
-        // let questions = this.props.data.map((question, index) => {
-        //     return(
-        //         <li key={question.id}><img{question.image}/></li>
-        //     )
-        // })
+        let questions = this.props.protectedData.data.map((question, index) => {
+            return(
+                <li key={question.id}><img src={question.image}/></li>
+            )
+        })
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
@@ -24,7 +24,8 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
-                    <p>Protected Data: {this.props.protectedData}</p>
+                    {/* <p>Protected Data: {this.props.protectedData.data}</p> */}
+                    <ul>{questions}</ul>
                     {/* <Question /> */}
                 </div>
             </div>
@@ -37,7 +38,7 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastname}`,
-        protectedData: state.protectedData.data,
+        protectedData: state.protectedData,
         // answer: state.protectedData.data.answer,
         questions: state.questions
     };
