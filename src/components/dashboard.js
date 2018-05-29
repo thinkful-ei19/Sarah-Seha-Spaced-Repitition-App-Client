@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-// import Question from './Question'
+import Question from './Question'
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -14,7 +14,7 @@ export class Dashboard extends React.Component {
         console.log(this.props)
         let questions = this.props.protectedData.data.map((question, index) => {
             return(
-                <li key={question.id}><img src={question.image}/></li>
+                <li key={question.id}><img src={question.image} alt="kitchen-tools"/></li>
             )
         })
         return (
@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     {/* <p>Protected Data: {this.props.protectedData.data}</p> */}
                     <ul>{questions}</ul>
-                    {/* <Question /> */}
+                    <Question /> 
                 </div>
             </div>
         );
