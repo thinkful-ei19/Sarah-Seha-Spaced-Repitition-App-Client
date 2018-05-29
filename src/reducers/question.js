@@ -6,7 +6,9 @@ const initialState = {
     wrong: false,
     feedback:null,
     score:0,
+    totalscore:0,
     guess: null,
+
 }
 
 const questionReducer = (state=initialState, action) => {
@@ -35,12 +37,15 @@ const questionReducer = (state=initialState, action) => {
         return Object.assign({}, state, {
             correct: true,
             wrong:false,
-            score:score + 1
+            score:score + 1,
+            totalscore: totalscore + 1,
+
         });
     } else if (action.type === actions.USER_ANSWER_WRONG) {
         return Object.assign({}, state, {
             correct:false,
             wrong: true,
+            totalscore: totalscore + 1
         });
     } else if (action.type === actions.FEEDBACK_FOR_CORRECT_ANS) {
         return Object.assign({}, state, {

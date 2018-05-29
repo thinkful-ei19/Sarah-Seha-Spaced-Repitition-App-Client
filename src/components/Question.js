@@ -8,8 +8,9 @@ class Question extends Component {
   onSubmit(event) {
     event.preventDefault();
   
-  let answer = this.props.questions.state.questions;
-  let userAnswer= event.target.userInput.value.toLowercaser();
+  let answer = this.props.questions;
+  let userAnswer= event.target.userInput.value.toLowerCase();
+  console.log(userAnswer);
   event.target.userInput.value="";
 
   if(answer === userAnswer) {
@@ -20,11 +21,13 @@ class Question extends Component {
   }
 
   render(){
+    const feedback = this.props.feedback !== null ? this.props.feedback : undefined;
+    const correctAnswer = this.props.correctAnswer !== null ? this.props.correctAnswer : undefined;
     return (
       <div className="questionboard">
-      <form>
-        {/* <h3 className="feedback">{}</h3>
-        <h3 className="feedback">{}</h3> */}
+      <form onSubmit= {event => this.onSubmit(event)}>
+        <h3 className="feedback">{feedback}</h3>
+        <h3 className="feedback">{correctAnswer}</h3>
         <input className="userInput"
           type="text"
           name="userInput"
@@ -39,7 +42,8 @@ class Question extends Component {
 
 const mapStateToProps =state => ({
   questions: state.questions,
-
+  feedback: state.feedback,
+  correctAnswer: state.correctAnswer
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Question));

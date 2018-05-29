@@ -16,7 +16,7 @@ export class Dashboard extends React.Component {
             return(
                 <li key={question.id}><img src={question.image} alt="kitchen-tools"/></li>
             )
-        })
+        }) 
 
         let currQuestion = this.props.protectedData.data[0];
 

@@ -29,15 +29,15 @@ const feedbackForWrong = () => ({
     type: USER_ANSWER_WRONG
 });
 
-export const FEEDBACK_FOR_CORRECT_ANS = 'FEEDBACK_FOR_CORRECT_ANS';
-export const feedbackForCorrectAns = () => ({
-    type: FEEDBACK_FOR_CORRECT_ANS,
+export const FETCH_FEEDBACK_FOR_CORRECT_ANS = 'FETCH_FEEDBACK_FOR_CORRECT_ANS';
+export const fetchFeedbackForCorrectAns = () => ({
+    type: FETCH_FEEDBACK_FOR_CORRECT_ANS,
     payload: "Yes! You got it!"
 });
 
-export const FEEDBACK_FOR_WRONG_ANS = 'FEEDBACK_FOR_WRONG_ANS';
-export const feedbackForWrongAns = () => ({
-    type: FEEDBACK_FOR_WRONG_ANS,
+export const FETCH_FEEDBACK_FOR_WRONG_ANS = 'FETCH_FEEDBACK_FOR_WRONG_ANS';
+export const fetchFeedbackForWrongAns = () => ({
+    type: FETCH_FEEDBACK_FOR_WRONG_ANS,
     payload: "Sorry! It is incorrect answer!"
 });
 
@@ -70,8 +70,9 @@ export const userAnswerCorrect = () => (dispatch, getState) => {
         }
     })
         .then(() => dispatch(fetchQuestion()))
+        .then(() => dispatch(fetchFeedbackForCorrectAns()))
         .catch(err => dispatch(fetchQuestionError(err)));
-};
+}
 
 export const userAnswerWrong = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
@@ -83,5 +84,6 @@ export const userAnswerWrong = () => (dispatch, getState) => {
         }
     })
         .then(() => dispatch(fetchQuestion()))
+        .then(() => dispatch(fetchFeedbackForWrongAns()))
         .catch(err => dispatch(fetchQuestionError(err)));
 };
