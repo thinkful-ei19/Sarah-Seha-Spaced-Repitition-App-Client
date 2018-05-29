@@ -9,8 +9,9 @@ class Question extends Component {
     event.preventDefault();
   
   let answer = this.props.questions;
+  console.log(answer);
   let userAnswer= event.target.userInput.value.toLowerCase();
-  console.log(userAnswer);
+  //console.log(userAnswer);
   event.target.userInput.value="";
 
   if(answer === userAnswer) {
