@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../config';
-//import { normalizeResponseErrors } from './utils';
+import { normalizeResponseErrors } from './utils';
 
 
 export const FETCH_QUESTION_REQUEST = 'FETCH_QUESTION_REQUEST';
@@ -16,6 +16,23 @@ export const fetchQuestionSuccess = question => ({
 export const FETCH_QUESTION_ERROR = 'FETCH_QUESTION_ERROR';
 export const fetchQuestionError = err => ({
     type: FETCH_QUESTION_ERROR,
+    err
+});
+
+export const SUBMIT_ANSWER_REQUEST = 'SUBMIT_ANSWER_REQUEST';
+export const submitAnswerRequest = answer => ({
+    type: SUBMIT_ANSWER_REQUEST
+});
+
+export const SUBMIT_ANSWER_SUCCESS = 'SUBMIT_ANSWER_SUCCESS';
+export const submitAnswerSuccess = answer => ({
+    type: SUBMIT_ANSWER_SUCCESS,
+    payload:answer
+});
+
+export const SUBMIT_ANSWER_ERROR = 'SUBMIT_ANSWER_ERROR';
+export const submitAnswerError = err => ({
+    type: SUBMIT_ANSWER_ERROR,
     err
 });
 
@@ -52,11 +69,30 @@ export const fetchQuestion = () => (dispatch, getState) => {
             Authorization: `Bearer ${authToken}`
         }
     })
-        //.then(res => normalizeResponseErrors(res))
+        .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(question => dispatch(fetchQuestionSuccess(question)))
         .catch(err => {
             dispatch(fetchQuestionError(err));
+        });
+};
+//Call this action on submit input answer
+export const postAnswer = (answer) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    console.log(answer);
+    dispatch(submitAnswerRequest());
+    return fetch(`${API_BASE_URL}/questions`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/jason',
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(answer => dispatch(submitAnswerSuccess(answer)))
+        .catch(err => {
+            dispatch(submitAnswerError(err));
         });
 };
 

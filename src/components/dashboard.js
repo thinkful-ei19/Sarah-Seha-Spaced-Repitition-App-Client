@@ -6,6 +6,9 @@ import Question from './Question';
 import Feedback from './Feedback'
 
 export class Dashboard extends React.Component {
+//toggle next/submit if state=question button will be submit have an onClick() that will dispatch postAnswer()
+//toggle next/submit if state=answered button will be next and onClick will dispatch fetchProtectedData() (which is the same as fetchQuestion())
+
     onClick(id) {
         this.props.dispatch(fetchNextQuestion());
     }
