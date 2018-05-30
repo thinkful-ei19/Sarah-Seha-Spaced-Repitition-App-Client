@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { userAnswerWrong, userAnswerCorrect } from '../actions/question';
+import { userAnswerWrong, userAnswerCorrect, FETCH_QUESTION_SUCCESS } from '../actions/question';
 
 
 class Question extends Component {
   onSubmit(event) {
     event.preventDefault();
   
-  let answer = this.props.questions;
-  console.log(answer);
-  let userAnswer= event.target.userInput.value.toLowerCase();
-  console.log(userAnswer);
-  event.target.userInput.value="";
+    let correctAnswer = this.correctAnswer;
+    console.log(correctAnswer);
+    let userAnswer = event.target.userInput.value.toLowerCase();
+    console.log(userAnswer);
+    event.target.userInput.value="";
 
-  if(answer === userAnswer) {
-    this.props.dispatch(userAnswerCorrect());
-  }else{
-    this.props.dispatch(userAnswerWrong());
-  }
+    if (correctAnswer === userAnswer) {
+      this.props.dispatch(userAnswerCorrect());
+    }else{
+      this.props.dispatch(userAnswerWrong());
+    }
   }
 
   render(){
-    const feedback = this.props.feedback !== null ? this.props.feedback : undefined;
-    const correctAnswer = this.props.correctAnswer !== null ? this.props.correctAnswer : undefined;
+    this.correctAnswer = this.props.answer;
     return (
       <div className="questionboard">
       <form onSubmit= {event => this.onSubmit(event)}>
-        <h3 className="feedback">{feedback}</h3>
-        <h3 className="feedback">{correctAnswer}</h3>
+
+        <img key={this.props.id} src={this.props.image} alt="kitchen-tools" />
+        <h3 className="feedback">{this.props.feedback}</h3>
         <input className="userInput"
           type="text"
           name="userInput"

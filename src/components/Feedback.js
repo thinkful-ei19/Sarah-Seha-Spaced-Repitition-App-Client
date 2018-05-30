@@ -18,7 +18,7 @@ class Feedback extends Component{
 
 const mapStateToProps = state => ({
     correctAnswer:state.question.score,
-    totalQuestion:state.question.totalScore
+    totalQuestion:state.question.totalscore
 })
 
 export default requiresLogin()(connect(mapStateToProps)(Feedback));

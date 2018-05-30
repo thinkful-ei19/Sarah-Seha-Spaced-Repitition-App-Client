@@ -7,7 +7,7 @@ const initialState = {
     feedback:null,
     score: 0,
     totalscore: 0,
-    guess: null,
+    guess: null
 }
 
 const questionReducer = (state=initialState, action) => {
@@ -21,7 +21,7 @@ const questionReducer = (state=initialState, action) => {
         return Object.assign({}, state, {
             loading: false,
             error: null,
-            guess:action.payload
+            guess: action.payload
         });
     } else if (action.type === actions.FETCH_QUESTION_ERROR) {
         return Object.assign({}, state, {

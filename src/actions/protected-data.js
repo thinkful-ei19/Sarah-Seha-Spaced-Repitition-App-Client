@@ -13,6 +13,11 @@ export const fetchProtectedDataError = error => ({
     error
 });
 
+export const FETCH_NEXT_QUESTION = 'FETCH_NEXT_QUESTION';
+export const fetchNextQuestion = () => ({
+    type: FETCH_NEXT_QUESTION
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {
