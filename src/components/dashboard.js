@@ -28,7 +28,8 @@ export class Dashboard extends React.Component {
             )
         }) 
 */
-        let currQuestion = this.props.protectedData.data[0];
+        let currQuestion = this.props.question;
+        console.log(currQuestion);
         
         return (
             <div className="dashboard">
@@ -39,7 +40,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     {currQuestion ? <Question {...currQuestion} /> : null }
                     <Feedback />
-                    <button className="next" onClick={() => this.onClick(currQuestion.id)}>Next</button>
+                    <button className="next" onClick={() => this.onClick(fetchProtectedData())}>Next</button>
                 </div>
             </div>
         );
@@ -51,7 +52,8 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastname}`,
-        protectedData: state.protectedData
+        protectedData: state.protectedData,
+        question: state.protectedData.data.image
     };
 };
 

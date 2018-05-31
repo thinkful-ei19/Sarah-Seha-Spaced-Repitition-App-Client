@@ -8,10 +8,10 @@ import {
 } from '../actions/protected-data';
 
 const initialState = {
-    data: [],
+    data: {},
     loading: null,
     error: null,
-    currentQuestion: 0,
+    // currentQuestion: 0,
     toggleButton: 'submit',
     countTotal: 0,
     countCorrect: 0
@@ -23,7 +23,7 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             data: action.data,
             error: null,
-            currentQuestion: 0
+            // currentQuestion: 0
         });
     } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
         return Object.assign({}, state, {
