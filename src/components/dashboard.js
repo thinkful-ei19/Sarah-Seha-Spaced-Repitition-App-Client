@@ -12,22 +12,14 @@ export class Dashboard extends React.Component {
     onClick(id) {
         //check on state 
         this.props.dispatch(fetchProtectedData());
+        this.setState(this.props.feedback === undefined)
     }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
 
     render() {
-        /*
-        // console.log(this.props.protectedData);
-        // console.log(this.props)
-        
-        let questions = this.props.protectedData.data.map((question, index) => {
-            return(
-                <li key={question.id}><img src={question.image} alt="kitchen-tools"/></li>
-            )
-        }) 
-*/
+       
         let currQuestion = this.props.question;
         console.log(currQuestion);
         
@@ -53,7 +45,8 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastname}`,
         protectedData: state.protectedData,
-        question: state.protectedData.data.image
+        question: state.protectedData.data.image,
+        feedback: state.protectedData.feedback
     };
 };
 

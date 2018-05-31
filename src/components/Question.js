@@ -27,10 +27,12 @@ class Question extends Component {
   
   render(){
     console.log(this.props.question)
+    
     const feedbackData = (this.props.feedback === undefined) ? null : (
-      <div>
+      // alert(`${this.props.feedback.feedback}. The answer is: ${this.props.feedback.answer}`)
+    <div>
     <p>{this.props.feedback.feedback}. The answer is: {this.props.feedback.answer}</p>
-    <p>You answered {this.props.feedback.correctTries} out of {this.props.feedback.totalTries} tries for this card</p>
+    <p>You answered correctly {this.props.feedback.correctTries} out of {this.props.feedback.totalTries} guesses for this card</p>
     </div>
     );
     console.log(this.props.answer);
@@ -39,7 +41,6 @@ class Question extends Component {
       <form onSubmit= {event => this.onSubmit(event)}>
 
         <img key={this.props.id} src={this.props.question} alt="kitchen-tools" />
-        {/* <h3 className="feedback">{this.props.protectedData.feedback.feedback}</h3> */}
         <input className="userInput"
           type="text"
           name="userInput"
