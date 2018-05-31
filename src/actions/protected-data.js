@@ -61,7 +61,7 @@ export const postAnswer = (answer) => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/questions`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/jason',
+            'Content-Type': 'application/json',
             Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(answer)

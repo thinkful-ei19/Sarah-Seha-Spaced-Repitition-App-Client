@@ -12,7 +12,7 @@ class Question extends Component {
     let correctAnswer = this.correctAnswer;
     // console.log(correctAnswer);
     let userAnswer = event.target.userInput.value.toLowerCase();
-    // console.log(userAnswer);
+    console.log(userAnswer);
     this.props.dispatch(postAnswer({
       answer: userAnswer}));
     event.target.userInput.value="";
