@@ -33,8 +33,9 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
                     {currQuestion ? <Question {...currQuestion} /> : null }
-                    <Feedback />
+                    {( this.props.answered === false ) ? null :
                     <button className="next" onClick={() => this.onClickhandler(fetchProtectedData())}>Next</button>
+                    }
                 </div>
             </div>
         );
