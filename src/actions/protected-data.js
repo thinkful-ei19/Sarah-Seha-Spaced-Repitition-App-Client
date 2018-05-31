@@ -18,6 +18,23 @@ export const fetchNextQuestion = () => ({
     type: FETCH_NEXT_QUESTION
 });
 
+export const SUBMIT_ANSWER_REQUEST = 'SUBMIT_ANSWER_REQUEST';
+export const submitAnswerRequest = answer => ({
+    type: SUBMIT_ANSWER_REQUEST
+});
+
+export const SUBMIT_ANSWER_SUCCESS = 'SUBMIT_ANSWER_SUCCESS';
+export const submitAnswerSuccess = data => ({
+    type: SUBMIT_ANSWER_SUCCESS,
+    data
+});
+
+export const SUBMIT_ANSWER_ERROR = 'SUBMIT_ANSWER_ERROR';
+export const submitAnswerError = err => ({
+    type: SUBMIT_ANSWER_ERROR,
+    err
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {
@@ -33,6 +50,29 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         .then(data => console.log(data))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
+        });
+};
+
+//Call this action on submit input answer
+export const postAnswer = (answer) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    console.log(answer);
+    dispatch(submitAnswerRequest());
+    return fetch(`${API_BASE_URL}/questions`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/jason',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify(answer)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res =>
+             res.json())
+        .then(data => dispatch(submitAnswerSuccess(data)))
+        .then(data => console.log(data))
+        .catch(err => {
+            dispatch(submitAnswerError(err));
         });
 };
 

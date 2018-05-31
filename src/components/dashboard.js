@@ -10,7 +10,8 @@ export class Dashboard extends React.Component {
 //toggle next/submit if state=answered button will be next and onClick will dispatch fetchProtectedData() (which is the same as fetchQuestion())
 
     onClick(id) {
-        this.props.dispatch(fetchNextQuestion());
+        //check on state 
+        this.props.dispatch(fetchProtectedData());
     }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
@@ -27,7 +28,7 @@ export class Dashboard extends React.Component {
             )
         }) 
 */
-        let currQuestion = this.props.protectedData.data[this.props.protectedData.currentQuestion];
+        let currQuestion = this.props.protectedData.data[0];
         
         return (
             <div className="dashboard">

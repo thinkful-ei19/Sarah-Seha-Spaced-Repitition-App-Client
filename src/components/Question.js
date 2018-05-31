@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { userAnswerWrong, userAnswerCorrect, FETCH_QUESTION_SUCCESS } from '../actions/question';
+import { FETCH_QUESTION_SUCCESS } from '../actions/question';
+import { postAnswer } from '../actions/protected-data';
 
 
 class Question extends Component {
-  onSubmit(event) {
+  onSubmit = (event) => {
     event.preventDefault();
   
     let correctAnswer = this.correctAnswer;
-    console.log(correctAnswer);
+    // console.log(correctAnswer);
     let userAnswer = event.target.userInput.value.toLowerCase();
-    console.log(userAnswer);
+    // console.log(userAnswer);
+    this.props.dispatch(postAnswer({
+      answer: userAnswer}));
     event.target.userInput.value="";
 
-    if (correctAnswer === userAnswer) {
-      this.props.dispatch(userAnswerCorrect());
-    }else{
-      this.props.dispatch(userAnswerWrong());
-    }
+    // if (correctAnswer === userAnswer) {
+    //   this.props.dispatch(userAnswerCorrect());
+    // }else{
+    //   this.props.dispatch(userAnswerWrong());
+    // }
   }
 
   render(){
