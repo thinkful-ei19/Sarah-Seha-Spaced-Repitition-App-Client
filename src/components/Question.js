@@ -42,6 +42,7 @@ class Question extends Component {
     // )
     console.log(this.props.answer);
     return (
+     
       <div className="questionboard">
       <form onSubmit= {event => {this.onSubmit(event), this.props.dispatch(toggleAnswered())}}>
 
@@ -60,6 +61,7 @@ class Question extends Component {
       {feedbackData}
       </div>
       </div>
+     
       
 )
   }

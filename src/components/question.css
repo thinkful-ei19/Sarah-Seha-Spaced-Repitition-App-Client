@@ -12,7 +12,12 @@
   border: none;
 }
 
-.feedbackboard{
-  position: relative;
-  top: 20px;
+
+/* .feedbackboard{
+ margin-top:3px;
+  
+} */
+
+.feedback{
+  margin-top:2em;
 }

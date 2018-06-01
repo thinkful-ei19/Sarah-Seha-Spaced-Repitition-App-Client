@@ -21,7 +21,7 @@ export function LandingPage(props) {
         </div>
         </div>
     );
-}
+} 
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null

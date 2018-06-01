@@ -9,10 +9,10 @@
   margin:0;
   font-family: 'pacifico', pacifico, 'Comic Sans MS', cursive, sans-serif;
   font-size: 2em;
+  background-color: black;
 }
-
 .logout-button{
-  margin-top:2px;;
+  margin-top:-50px;;
   margin-right:10px;
   color:black;
   display: flex; 
