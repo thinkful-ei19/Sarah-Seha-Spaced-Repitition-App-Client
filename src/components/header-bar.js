@@ -25,13 +25,23 @@ export class HeaderBar extends React.Component {
                 <h1 className="cookese">Cookese</h1>
                 </div>
                 {logOutButton}
+                    <button>
+                        <a onClick={(event) => {
+                        // this.props.dispatch(info(event))
+                        console.log('clicked')}}
+                        className="about"
+                        href="#"
+                        >About
+                        </a>
+                    </button>
             </div>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    info: state.auth.info
 });
 
 export default connect(mapStateToProps)(HeaderBar);

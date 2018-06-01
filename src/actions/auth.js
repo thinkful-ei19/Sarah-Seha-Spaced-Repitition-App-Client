@@ -33,6 +33,12 @@ export const authError = error => ({
     error
 });
 
+//toggle display info
+export const TOGGLE_INFO = 'TOGGLE_INFO'
+export const info = () => ({
+    type: TOGGLE_INFO
+})
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
