@@ -1,4 +1,4 @@
-/* .login-form{
+/* .home-login{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,4 +21,26 @@
   color: rgb(253, 245, 245);
   font-size: 16px;
 }
+.login-container{
+    float:right;
+    margin-right:5px;
+    margin-top: -55px;
+}
+.login-container > a{  
+    color:black;
+    display: inline-block;
+    text-align: center;
+    transition: 0.5s;
+    padding: 0 20px;
+    cursor: pointer;
+    transition:0.5s;
+    background-color: red;
+    border-radius: 2px;   
+    font-size: 1em;
+    width: 70px;
+    box-shadow: 5px 5px;
+    border: 1px solid red;
+    text-decoration:none;
+}
+
  
