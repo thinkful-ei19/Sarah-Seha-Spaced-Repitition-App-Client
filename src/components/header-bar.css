@@ -28,3 +28,24 @@
   border: 1px solid red;
   float:right; 
 }
+.about{
+  margin-top:-50px;;
+  margin-right:15px;
+  display: flex; 
+  height:35px;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 2px;   
+  width: 100px;
+  box-shadow: 5px 5px;
+  border: 1px solid red;
+  float:right; 
+  text-decoration: none;
+}
+ a{
+  color:black;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+}

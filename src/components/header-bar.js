@@ -25,11 +25,10 @@ export class HeaderBar extends React.Component {
                 <h1 className="cookese">Cookese</h1>
                 </div>
                 {logOutButton}
-                    <button>
+                <button className="about">
                         <a onClick={(event) => {
                         // this.props.dispatch(info(event))
                         console.log('clicked')}}
-                        className="about"
                         href="#"
                         >About
                         </a>
