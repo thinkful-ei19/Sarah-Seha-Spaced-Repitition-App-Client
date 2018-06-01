@@ -35,6 +35,11 @@ export const submitAnswerError = err => ({
     err
 });
 
+export const TOGGLE_ANSWERED = 'TOGGLE_ANSWERED'
+export const toggleAnswered = () => ({
+  type: TOGGLE_ANSWERED
+})
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {

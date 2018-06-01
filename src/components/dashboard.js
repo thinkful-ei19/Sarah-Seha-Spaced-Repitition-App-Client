@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchProtectedData, fetchNextQuestion } from '../actions/protected-data';
+import { fetchProtectedData, fetchNextQuestion, toggleAnswered } from '../actions/protected-data';
 import Question from './Question';
 import Feedback from './Feedback'
 import './dashboard.css';
@@ -9,18 +9,20 @@ import './dashboard.css';
 export class Dashboard extends React.Component {
 //toggle next/submit if state=question button will be submit have an onClick() that will dispatch postAnswer()
 //toggle next/submit if state=answered button will be next and onClick will dispatch fetchProtectedData() (which is the same as fetchQuestion())
+    
 
-    onClick(id) {
+    onClickhandler() {
         //check on state 
         this.props.dispatch(fetchProtectedData());
-        this.setState(this.props.feedback === undefined)
+        this.props.dispatch(toggleAnswered());
+        console.log(this.props.answered);
     }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
 
     render() {
-       
+        const answered = this.props.answered;
         let currQuestion = this.props.question;
         console.log(currQuestion);
         
@@ -33,8 +35,9 @@ export class Dashboard extends React.Component {
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
                 <div className="dashboard-protected-data">checkout 
                     {currQuestion ? <Question {...currQuestion} /> : null }
-                    <Feedback />
-                    <button className="next" onClick={() => this.onClick(fetchProtectedData())}>Next</button>
+                    {( this.props.answered === false ) ? null :
+                    <button className="next" onClick={() => this.onClickhandler(fetchProtectedData())}>Next</button>
+                    }
                 </div>
             </div>
         );
@@ -48,7 +51,8 @@ const mapStateToProps = state => {
         name: `${currentUser.firstname} ${currentUser.lastname}`,
         protectedData: state.protectedData,
         question: state.protectedData.data.image,
-        feedback: state.protectedData.feedback
+        feedback: state.protectedData.feedback,
+        answered: state.protectedData.answered
     };
 };
 

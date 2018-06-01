@@ -4,14 +4,15 @@ import {
     FETCH_NEXT_QUESTION,
     SUBMIT_ANSWER_REQUEST,
     SUBMIT_ANSWER_SUCCESS,
-    SUBMIT_ANSWER_ERROR
+    SUBMIT_ANSWER_ERROR,
+    TOGGLE_ANSWERED
 } from '../actions/protected-data';
 
 const initialState = {
     data: {},
     loading: null,
     error: null,
-    // currentQuestion: 0,
+    answered: false,
     toggleButton: 'submit',
     countTotal: 0,
     countCorrect: 0
@@ -50,7 +51,12 @@ export default function reducer(state = initialState, action) {
             error: action.error,
             loading: null
         });
-    } 
+    } else if(action.type === TOGGLE_ANSWERED) {
+        console.log(state.answered)
+        return Object.assign({}, state,  {
+          answered: !state.answered
+        })
+      }
     // else if (action.type === FETCH_NEXT_QUESTION) {
     //     return Object.assign({}, state, {
     //         currentQuestion: state.currentQuestion + 1
