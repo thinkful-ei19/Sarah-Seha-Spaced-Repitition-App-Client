@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import { fetchProtectedData, fetchNextQuestion } from '../actions/protected-data';
 import Question from './Question';
 import Feedback from './Feedback'
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
 //toggle next/submit if state=question button will be submit have an onClick() that will dispatch postAnswer()
@@ -26,10 +27,11 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
-                    Hello, {this.props.username}
+                    Hello, {this.props.username}   
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
+                <h3 className="dashboard-h3">What is this useful kitchen gadget?</h3>
+                {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
+                <div className="dashboard-protected-data">checkout 
                     {currQuestion ? <Question {...currQuestion} /> : null }
                     <Feedback />
                     <button className="next" onClick={() => this.onClick(fetchProtectedData())}>Next</button>

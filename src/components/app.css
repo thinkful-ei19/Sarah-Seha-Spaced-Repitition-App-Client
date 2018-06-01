@@ -1,0 +1,24 @@
+html{
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+     /* background-image: url('https://image.freepik.com/vrije-vector/hand-getekende-elementen-voor-het-koken_23-2147504315.jpg');   */
+    /* background-image: url('https://image.freepik.com/vrije-vector/keukengerei-tekeningen_23-2147502315.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+@media only screen and (min-width:900px){
+  html{
+    background-size:130%;
+  }
+}

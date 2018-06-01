@@ -1,0 +1,27 @@
+.header-bar {
+  display: flex;
+  padding: 5px 15px;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+
+}
+.cookese{
+  color:red;
+  margin: 0;
+  height: 100%;
+  font-family: 'pacifico', pacifico, 'Comic Sans MS', cursive, sans-serif;
+  font-size: 20px;
+}
+.header-bar > button {
+  background: rgba(240, 28, 56, 0);
+  color: rgb(253, 245, 245);
+  text-align: left;
+  width: 10%;
+  font-size: 17px;
+  font-family: 'pacifico', pacifico, 'Comic Sans MS', cursive, sans-serif;
+  height: 100%;
+  position: relative;
+  float: right;
+  border: none;
+}
+
