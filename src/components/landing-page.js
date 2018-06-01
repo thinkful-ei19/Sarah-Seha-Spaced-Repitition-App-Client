@@ -17,7 +17,9 @@ export function LandingPage(props) {
             <div className="loginbox">
             <h2>Cookese</h2>
             <LoginForm />
-            <Link to="/register" className="signup-button hoverable">Sign Up</Link>
+            <div className="signup"> 
+            <Link to="/register" className="signup-button">Sign Up</Link>
+        </div>
         </div>
         </div>
     );
