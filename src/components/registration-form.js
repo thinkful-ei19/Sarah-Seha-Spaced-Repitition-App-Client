@@ -4,8 +4,11 @@ import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import './registiration-form.css';
+
 const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
+
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
@@ -19,7 +22,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="login-form"
+                className="loginbox"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -48,10 +51,10 @@ export class RegistrationForm extends React.Component {
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
-                <button
+                <button className="sign-up"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
-                    Register
+                    Sign Up
                 </button>
             </form>
         );

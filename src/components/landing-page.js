@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import './landing-page.css';
 
 import LoginForm from './login-form';
 
@@ -11,10 +12,13 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="home">
-            <h2>Let's Start</h2>
+        <div className="landing">
+            {/* <img className="landingImage" src={require('../images/gadgets.jpg')} alt="kitchen-tools" /> */}
+            <div className="loginbox">
+            <h2>Cookese</h2>
             <LoginForm />
-            <Link to="/register" className="register">Register</Link>
+            <Link to="/register" className="signup-button hoverable">Sign Up</Link>
+        </div>
         </div>
     );
 }
