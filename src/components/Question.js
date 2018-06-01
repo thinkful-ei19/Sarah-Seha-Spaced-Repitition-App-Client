@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 // import { FETCH_QUESTION_SUCCESS } from '../actions/question';
-import { postAnswer, toggleAnswered } from '../actions/protected-data';
+import { postAnswer, toggleAnswered, incrementCountCorrect, incrementCountTotal } from '../actions/protected-data';
 
 
 class Question extends Component {
@@ -18,6 +18,9 @@ class Question extends Component {
     event.target.userInput.value="";
     // this.props.dispatch(toggleAnswered(event));
     console.log(this.props.answered);
+    this.props.dispatch(incrementCountTotal())
+    
+    console.log(this.props.correctScore, this.props.totalScore);
   }
   
   
@@ -25,24 +28,20 @@ class Question extends Component {
     console.log(this.props.question)
     console.log(this.props.answered, 'in render');
     console.log(this.props.feedback, 'in render');
-    // let feedbackData;
-    // if(this.props.feedback===undefined || this.props.answered===false) {
-    //   let feedbackData = null;
-    // } else {
-    //   let feedbackData = (<div>
-    //     <p>{this.props.feedback.feedback}. The answer is: {this.props.feedback.answer}</p>
-    //     <p>You answered correctly {this.props.feedback.correctTries} out of {this.props.feedback.totalTries} guesses for this card</p>
-    //     </div>)
-    // }
-    // console.log(feedbackData);
     
     const feedbackData = (this.props.feedback===undefined || this.props.answered===false ) ? null : (
-      // alert(`${this.props.feedback.feedback}. The answer is: ${this.props.feedback.answer}`)
     <div>
     <p>{this.props.feedback.feedback}. The answer is: {this.props.feedback.answer}</p>
     <p>You answered correctly {this.props.feedback.correctTries} out of {this.props.feedback.totalTries} guesses for this card</p>
+    <p>You answered correctly {this.props.correctScore} out of {this.props.totalScore} guesses for this session</p>
     </div>
     );
+
+    // const score = (this.props.feedback===undefined || this.props.answered===false ) ? null :  (
+      
+    //   (this.props.feedback.feedback === 'You got it!') ?
+    //     this.props.dispatch(incrementCountCorrect()) : null
+    // )
     console.log(this.props.answer);
     return (
       <div className="questionboard">
@@ -70,12 +69,13 @@ class Question extends Component {
 
 const mapStateToProps =state => ({
   questions: state.questions,
-  // feedback: state.feedback,
   correctAnswer: state.correctAnswer,
   answered: state.protectedData.answered,
   question: state.protectedData.data.image,
   id: state.protectedData.id,
   feedback: state.protectedData.feedback,
+  totalScore: state.protectedData.totalScore,
+  correctScore: state.protectedData.correctScore
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Question));

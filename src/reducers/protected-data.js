@@ -5,7 +5,9 @@ import {
     SUBMIT_ANSWER_REQUEST,
     SUBMIT_ANSWER_SUCCESS,
     SUBMIT_ANSWER_ERROR,
-    TOGGLE_ANSWERED
+    TOGGLE_ANSWERED,
+    INCREMENT_COUNT_TOTAL,
+    INCREMENT_COUNT_CORRECT
 } from '../actions/protected-data';
 
 const initialState = {
@@ -14,8 +16,8 @@ const initialState = {
     error: null,
     answered: false,
     toggleButton: 'submit',
-    countTotal: 0,
-    countCorrect: 0
+    totalScore: 0,
+    correctScore: 0
 };
 
 export default function reducer(state = initialState, action) {
@@ -56,10 +58,16 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state,  {
           answered: !state.answered
         })
-      }
-    // else if (action.type === FETCH_NEXT_QUESTION) {
+      } else if (action.type === INCREMENT_COUNT_TOTAL) {
+        return Object.assign({}, state, {
+            totalScore: state.totalScore + 1
+        });
+    } 
+    // else if (action.type === INCREMENT_COUNT_CORRECT) {
+    //     let feedback, correctScore;
+    //     if()
     //     return Object.assign({}, state, {
-    //         currentQuestion: state.currentQuestion + 1
+            
     //     });
     // }
     return state;

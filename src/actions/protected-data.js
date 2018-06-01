@@ -40,6 +40,18 @@ export const toggleAnswered = () => ({
   type: TOGGLE_ANSWERED
 })
 
+export const INCREMENT_COUNT_TOTAL ='INCREMENT_COUNT_TOTAL'
+export const incrementCountTotal = (countTotal) => ({
+    type: INCREMENT_COUNT_TOTAL,
+    countTotal
+})
+
+export const INCREMENT_COUNT_CORRECT = 'INCREMENT_COUNT_CORRECT'
+export const incrementCountCorrect = (countCorrect, feedback) => ({
+    type: INCREMENT_COUNT_CORRECT,
+    countCorrect
+})
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {
