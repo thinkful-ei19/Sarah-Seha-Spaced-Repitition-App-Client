@@ -8,7 +8,7 @@ import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
-// import About from './about-app';
+import About from './about-app';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -44,10 +44,13 @@ export class App extends React.Component {
         return (
             <div className="app">
                 <HeaderBar />
+                {this.props.displayInfo 
+            ? <About /> 
+            : ''}
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
-                {/* <Route exact path='/' component={About} /> */}
+                
             </div>
         );
     }
@@ -55,7 +58,8 @@ export class App extends React.Component {
 
 const mapStateToProps = state => ({
     hasAuthToken: state.auth.authToken !== null,
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    displayInfo: state.auth.displayInfo
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking

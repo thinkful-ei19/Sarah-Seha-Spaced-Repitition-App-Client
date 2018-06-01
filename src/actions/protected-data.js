@@ -52,10 +52,10 @@ export const incrementCountCorrect = (countCorrect) => ({
     countCorrect
 })
 
-export const TOGGLE_INFO = 'TOGGLE_INFO'
-export const info = () => ({
-    type: TOGGLE_INFO
-})
+// export const TOGGLE_INFO = 'TOGGLE_INFO'
+// export const info = () => ({
+//     type: TOGGLE_INFO
+// })
 
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

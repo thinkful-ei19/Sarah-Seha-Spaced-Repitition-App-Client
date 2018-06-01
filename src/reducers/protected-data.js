@@ -18,8 +18,7 @@ const initialState = {
     answered: false,
     toggleButton: 'submit',
     totalScore: 0,
-    correctScore: 0,
-    displayInfo: false
+    correctScore: 0
 };
 
 export default function reducer(state = initialState, action) {
@@ -64,13 +63,14 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             totalScore: state.totalScore + 1
         });
-    } else if(action.type === TOGGLE_INFO) {
-        console.log(state.displayInfo)
-        return Object.assign({}, state,  {
+    } 
+    // else if(action.type === TOGGLE_INFO) {
+    //     console.log(state.displayInfo)
+    //     return Object.assign({}, state,  {
           
-          displayInfo: !state.displayInfo
-        })
-      }
+    //       displayInfo: !state.displayInfo
+    //     })
+    //   }
     else if (action.type === INCREMENT_COUNT_CORRECT) {
         // let feedback, correctScore;
         // console.log(state.correctScore);

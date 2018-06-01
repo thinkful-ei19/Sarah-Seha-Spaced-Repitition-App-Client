@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
+import {clearAuth, info} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import './header-bar.css';
 
@@ -27,7 +27,7 @@ export class HeaderBar extends React.Component {
                 {logOutButton}
                     <button>
                         <a onClick={(event) => {
-                        // this.props.dispatch(info(event))
+                        this.props.dispatch(info(event))
                         console.log('clicked')}}
                         className="about"
                         href="#"
