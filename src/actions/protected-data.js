@@ -47,9 +47,14 @@ export const incrementCountTotal = (countTotal) => ({
 })
 
 export const INCREMENT_COUNT_CORRECT = 'INCREMENT_COUNT_CORRECT'
-export const incrementCountCorrect = (countCorrect, feedback) => ({
+export const incrementCountCorrect = (countCorrect) => ({
     type: INCREMENT_COUNT_CORRECT,
     countCorrect
+})
+
+export const TOGGLE_INFO = 'TOGGLE_INFO'
+export const info = () => ({
+    type: TOGGLE_INFO
 })
 
 export const fetchProtectedData = () => (dispatch, getState) => {
