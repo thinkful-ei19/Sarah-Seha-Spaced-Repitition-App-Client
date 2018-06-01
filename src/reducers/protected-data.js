@@ -47,7 +47,7 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             feedback: action.data,
             error: null,
-            // currentQuestion: 0
+            totalScore: state.totalScore + 1
         });
     } else if (action.type === SUBMIT_ANSWER_ERROR) {
         return Object.assign({}, state, {
@@ -72,13 +72,9 @@ export default function reducer(state = initialState, action) {
     //     })
     //   }
     else if (action.type === INCREMENT_COUNT_CORRECT) {
-        // let feedback, correctScore;
-        // console.log(state.correctScore);
-        // if(state.feedback.feedback==='You got it!') {
-        //     correctScore = state.correctScore ++
-        // }
+        console.log('triggered')
         return Object.assign({}, state, {
-            correctScore: state.correctScore ++
+            correctScore: state.correctScore + 1
         });
     }
     return state;

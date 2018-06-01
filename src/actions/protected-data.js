@@ -47,9 +47,8 @@ export const incrementCountTotal = (countTotal) => ({
 })
 
 export const INCREMENT_COUNT_CORRECT = 'INCREMENT_COUNT_CORRECT'
-export const incrementCountCorrect = (countCorrect) => ({
-    type: INCREMENT_COUNT_CORRECT,
-    countCorrect
+export const incrementCountCorrect = () => ({
+    type: INCREMENT_COUNT_CORRECT
 })
 
 // export const TOGGLE_INFO = 'TOGGLE_INFO'
@@ -91,8 +90,14 @@ export const postAnswer = (answer) => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res =>
              res.json())
-        .then(data => dispatch(submitAnswerSuccess(data)))
-        .then(data => console.log(data))
+        .then(data => {
+            dispatch(submitAnswerSuccess(data))
+            if(data.feedback==='You got it!') {
+                console.log(data)
+                dispatch(incrementCountCorrect())
+            }
+        })
+        // .then(data => console.log(data))
         .catch(err => {
             dispatch(submitAnswerError(err));
         });
