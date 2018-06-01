@@ -3,15 +3,17 @@
   /* background-color:rgb(214, 207, 207); */
   /* padding: 0 628px;  */
 }
-.cookese{
+.cookese {
+  margin :3em;
   color:red;
- margin:0;
+  margin:0;
   font-family: 'pacifico', pacifico, 'Comic Sans MS', cursive, sans-serif;
-  font-size: 3em;
+  font-size: 2em;
 }
 
-.header-bar > button {
-  margin-right:2em;
+.logout-button{
+  margin-top:2px;;
+  margin-right:10px;
   color:black;
   display: flex; 
   height:35px;
@@ -25,18 +27,4 @@
   box-shadow: 5px 5px;
   border: 1px solid red;
   float:right; 
-}
-.logout-button{
-  font-family: 'pacifico', pacifico, 'Comic Sans MS', cursive, sans-serif;
-  font-size: 17px;
-  text-decoration: none;
-  text-align: center;
-  background-color: rgba(221, 206, 206, 0);
-  color: rgb(253, 245, 245);
-  float: right;
-  top: 13%;
-  width: 10%;
-  height: 100%;
-  position: relative;
-  border: none;
 }

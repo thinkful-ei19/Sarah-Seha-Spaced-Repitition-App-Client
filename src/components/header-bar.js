@@ -21,7 +21,9 @@ export class HeaderBar extends React.Component {
         return (
 
             <div className="header-bar">
+            <div className="cookese">
                 <h1 className="cookese">Cookese</h1>
+                </div>
                 {logOutButton}
             </div>
         );
