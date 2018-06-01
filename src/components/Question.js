@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 // import { FETCH_QUESTION_SUCCESS } from '../actions/question';
 import { postAnswer, toggleAnswered } from '../actions/protected-data';
-
+import './question.css';
 
 class Question extends Component {
   onSubmit = (event) => {
@@ -38,7 +38,7 @@ class Question extends Component {
     
     const feedbackData = (this.props.feedback===undefined || this.props.answered===false ) ? null : (
       // alert(`${this.props.feedback.feedback}. The answer is: ${this.props.feedback.answer}`)
-    <div>
+    <div className="feedbackboard">
     <p>{this.props.feedback.feedback}. The answer is: {this.props.feedback.answer}</p>
     <p>You answered correctly {this.props.feedback.correctTries} out of {this.props.feedback.totalTries} guesses for this card</p>
     </div>
@@ -55,7 +55,7 @@ class Question extends Component {
           type="text"
           name="userInput"
           />
-        <button className="button">Submit</button>
+        <button className="button-submit">Submit</button>
         </div>
         }
       </form>

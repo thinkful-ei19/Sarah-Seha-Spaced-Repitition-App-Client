@@ -33,7 +33,7 @@ export class Dashboard extends React.Component {
                 </div>
                 <h3 className="dashboard-h3">What is this useful kitchen gadget?</h3>
                 {/* <div className="dashboard-name">Name: {this.props.name}</div> */}
-                <div className="dashboard-protected-data">checkout 
+                <div className="dashboard-protected-data">
                     {currQuestion ? <Question {...currQuestion} /> : null }
                     {( this.props.answered === false ) ? null :
                     <button className="next" onClick={() => this.onClickhandler(fetchProtectedData())}>Next</button>

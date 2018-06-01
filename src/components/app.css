@@ -5,10 +5,11 @@ html{
 }
 
 body{
-     /* background-image: url('https://image.freepik.com/vrije-vector/hand-getekende-elementen-voor-het-koken_23-2147504315.jpg');   */
+   background-image: url('https://image.freepik.com/vrije-vector/hand-getekende-elementen-voor-het-koken_23-2147504315.jpg');   
     /* background-image: url('https://image.freepik.com/vrije-vector/keukengerei-tekeningen_23-2147502315.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .app{

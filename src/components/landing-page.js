@@ -13,11 +13,11 @@ export function LandingPage(props) {
 
     return (
         <div className="landing">
-            <img className="landingImage" src={require('../images/gadgets.jpg')} alt="kitchen-tools" />
+            {/* <img className="landingImage" src={require('../images/gadgets.jpg')} alt="kitchen-tools" /> */}
             <div className="loginbox">
             <h2>Cookese</h2>
             <LoginForm />
-            <Link to="/register" className="register-button hoverable">Register</Link>
+            <Link to="/register" className="signup-button hoverable">Sign Up</Link>
         </div>
         </div>
     );

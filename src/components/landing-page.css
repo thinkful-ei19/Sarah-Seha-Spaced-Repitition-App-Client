@@ -4,41 +4,36 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 350px;
-  height: 320px;
+  width: 450px;
+  height: 420px;
   padding: 60px 40px;
   box-sizing: border-box;
   background: linear-gradient(rgba(240, 28, 56, 0.95), rgba(240, 28, 56, 0.7));
-    
+  text-align:center;
 }
-.landingImage{
+
+/* .landingImage{
   width: 100%;
   height: 80%;
   display:inline-block;
   position: relative;
   margin-top:60px;
- 
   background-position:center;
-}
-.register-button{
-  margin-top: 35px;
-  margin-bottom: 35px;
-  /* vertical-align: middle; */
+} */
+.signup-button{
   color:black;
-  display: inline-block;
-  height:35px;
+  text-decoration: none;
   text-align: center;
-  transition: 0.5s;
   padding: 0 20px;
   cursor: pointer;
-  transition:0.5s;
   background-color: red;
   border-radius: 2px;   
   font-size: 1em;
-  width: 60px;
+  width: 100px;
   box-shadow: 5px 5px;
   border: 1px solid red;
 }
+
 .hoverable {
   cursor:pointer;
   text-decoration:none;
