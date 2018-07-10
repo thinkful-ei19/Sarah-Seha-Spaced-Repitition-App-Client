@@ -11,35 +11,47 @@
   text-align:center;
 } */
 
-.loginBox input[type='text'],
-.loginBox input[type='password'] {
+.loginBox input[type="text"],
+.loginBox input[type="password"] {
   border: none;
   border-bottom: 1px solid #fff;
   background: transparent;
   outline: none;
   height: 40px;
-  
+
   font-size: 16px;
 }
-.login-container{
-    float:right;
-    margin-right:5px;
-    margin-top: -53px;
+/* .login-container {
+  float: right;
+  margin-right: 5px;
+  margin-top: -53px;
 }
-.login-container > a{  
-    color:black;
-    display: inline-block;
-    transition: 0.5s;
-    cursor: pointer;
-    background-color: red;
-    border-radius: 2px;   
-    font-size: 1em;
-    width: 100px;
-    height:33px;
-    box-shadow: 5px 5px;
-    border: 1px solid red;
-    text-decoration:none;
-   
+.login-container > a {
+  color: black;
+  display: inline-block;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 2px;
+  font-size: 1em;
+  width: 100px;
+  height: 33px;
+  box-shadow: 5px 5px;
+  border: 1px solid red;
+  text-decoration: none;
+} */
+.sign-up {
+  margin-top: 5px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 20px;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 2px;
+  font-size: 1em;
+  width: 130px;
+  box-shadow: 5px 5px;
+  border: 1px solid red;
+  margin: auto;
 }
-
- 
