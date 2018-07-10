@@ -43,7 +43,6 @@ export class HeaderBar extends React.Component {
               this.props.dispatch(info(event));
               console.log("clicked");
             }}
-            href="#"
           >
             About
           </a>

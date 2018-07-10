@@ -32,7 +32,6 @@ export function About(props) {
         <button>
           <a
             className="close"
-            href="#"
             onClick={event => {
               props.dispatch(info(event));
             }}
