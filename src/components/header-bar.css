@@ -59,17 +59,7 @@ a {
   color: black;
   font-size: 1.5em;
   text-decoration: none;
-  /* margin-top: 10px; */
   text-align: center;
-  /* padding: 8px 20px;
-  cursor: pointer;
-  background-color: red;
-  border-radius: 2px;
-  font-size: 1em;
-  width: 130px;
-  box-shadow: 5px 5px;
-  border: 1px solid red;
-  margin: 2em auto; */
 }
 
 .login > a {
@@ -87,4 +77,42 @@ a {
   box-shadow: 5px 5px;
   border: 1px solid red;
   margin: 2em auto;
+}
+@media only screen and (max-width: 500px) {
+  .cookese {
+    font-size: 1.5em;
+  }
+  .logout-button {
+    margin-top: -45px;
+    margin-right: 10px;
+    padding: 0 20px;
+    font-size: 0.7em;
+    width: 70px;
+    height: 25px;
+  }
+  .about {
+    margin-top: 7px;
+    margin-right: 1320px;
+    position: fixed;
+    height: 25px;
+    padding: 0 20px;
+    background-color: red;
+    border-radius: 2px;
+    width: 70px;
+  }
+  a {
+    font-size: 1em;
+  }
+  .loginButton {
+    margin-top: -9px;
+    margin-right: 10px;
+    display: flex;
+    position: relative;
+    height: 25px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 2px;
+    width: 70px;
+  }
 }
