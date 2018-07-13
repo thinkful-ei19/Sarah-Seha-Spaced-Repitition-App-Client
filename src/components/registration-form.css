@@ -1,45 +1,28 @@
-/* .home-login{
+.loginbox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px;
-  height: 420px;
-  padding: 60px 40px;
+  width: 500px;
+  height: 450px;
+  padding: 40px 40px;
   box-sizing: border-box;
-  background: linear-gradient(rgba(240, 28, 56, 0.95), rgba(240, 28, 56, 0.7));
-  text-align:center;
-} */
+  background: rgba(240, 28, 56, 0.8);
+  text-align: center;
+}
 
-.loginBox input[type="text"],
-.loginBox input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
+.loginbox input[type="text"],
+.loginbox input[type="password"] {
+  border: 2px solid white;
+  border-radius: 4px;
   background: transparent;
+  padding: 7px 40px;
+  margin: 4px 0;
   outline: none;
-  height: 40px;
-
-  font-size: 16px;
+  height: 15px;
+  font-size: 14px;
+  color: rgb(200, 200, 200);
 }
-/* .login-container {
-  float: right;
-  margin-right: 5px;
-  margin-top: -53px;
-}
-.login-container > a {
-  color: black;
-  display: inline-block;
-  transition: 0.5s;
-  cursor: pointer;
-  background-color: red;
-  border-radius: 2px;
-  font-size: 1em;
-  width: 100px;
-  height: 33px;
-  box-shadow: 5px 5px;
-  border: 1px solid red;
-  text-decoration: none;
-} */
 .sign-up {
   margin-top: 5px;
   color: black;

@@ -13,7 +13,6 @@ export function LandingPage(props) {
 
   return (
     <div className="landing">
-      {/* <img className="landingImage" src={require('../images/gadgets.jpg')} alt="kitchen-tools" /> */}
       <div className="loginbox">
         <h2>Cookese</h2>
         <LoginForm />

@@ -20,6 +20,7 @@ export class HeaderBar extends React.Component {
         </button>
       );
     }
+
     return (
       <div className="header-bar">
         <div className="cookese">
@@ -29,7 +30,7 @@ export class HeaderBar extends React.Component {
         <button className="loginButton">
           <a
             onClick={event => {
-              this.props.dispatch(info(event));
+              this.props.dispatch(event);
               console.log("clicked");
             }}
             href="/"
@@ -37,6 +38,7 @@ export class HeaderBar extends React.Component {
             Login
           </a>
         </button>
+
         <button className="about">
           <a
             onClick={event => {

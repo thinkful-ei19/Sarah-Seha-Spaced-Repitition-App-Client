@@ -1,14 +1,27 @@
-.loginbox {
+.landing > .loginbox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
+  width: 500px;
   height: 400px;
-  padding: 70px 40px;
+  padding: 30px 40px;
   box-sizing: border-box;
   background: linear-gradient(rgba(240, 28, 56, 0.95), rgba(240, 28, 56, 0.7));
   text-align: center;
+}
+
+.landing > .loginbox input[type="text"],
+.landing > .loginbox input[type="password"] {
+  border: 2px solid white;
+  border-radius: 4px;
+  background: transparent;
+  padding: 7px 40px;
+  margin: 4px 0;
+  outline: none;
+  height: 15px;
+  font-size: 14px;
+  color: rgb(200, 200, 200);
 }
 
 .signup-button {
@@ -26,12 +39,12 @@
   margin: auto;
 }
 .landing > .infoaboutapp {
-  position: absolute;
-  bottom: -3em;
+  position: fixed;
+  bottom: -3.4em;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
-  height: 130px;
+  height: 110px;
   padding: 30px 20px;
   box-sizing: border-box;
   background: linear-gradient(rgba(240, 28, 56, 0.95), rgba(240, 28, 56, 0.7));
@@ -43,8 +56,9 @@
     width: 80%;
   }
   .landing > .infoaboutapp {
-    bottom: -2%;
-    width: 80%;
+    bottom: -8%;
+    width: 90%;
+    height: 20%;
     padding: 0;
   }
 }

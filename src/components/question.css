@@ -1,5 +1,5 @@
-.button-submit{
- font-family: sans-serif;
+.button-submit {
+  font-family: sans-serif;
   background-color: rgba(221, 206, 206, 0.308);
   font-size: 20px;
   padding: 5px;
@@ -12,12 +12,6 @@
   border: none;
 }
 
-
-/* .feedbackboard{
- margin-top:3px;
-  
-} */
-
-.feedback{
-  margin-top:2em;
+.feedback {
+  margin-top: 2em;
 }
