@@ -37,7 +37,7 @@
 }
 
 .dashboard-h3 {
-  font-family: sans-serif;
+  font-family: "pacifico", pacifico, "Comic Sans MS", cursive, sans-serif;
   font-size: 20px;
   margin-top: 90px;
   margin-left: -45px;
@@ -45,7 +45,7 @@
 }
 .next {
   background-color: rgba(221, 206, 206, 0.308);
-  font-family: sans-serif;
+  font-family: "pacifico", pacifico, "Comic Sans MS", cursive, sans-serif;
   font-size: 20px;
   padding: 5px;
   width: 45%;
@@ -60,7 +60,7 @@
 @media only screen and (max-width: 500px) {
   .dashboard {
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 50%;
     height: 75%;
     width: 95%;
