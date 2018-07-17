@@ -38,3 +38,17 @@
   border: 1px solid red;
   margin: auto;
 }
+@media all and (max-width: 500px) {
+  .sign-up {
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+    position: relative;
+    height: 25px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 2px;
+    width: 70px;
+  }
+}

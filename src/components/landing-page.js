@@ -21,6 +21,10 @@ export function LandingPage(props) {
             Sign Up
           </Link>
         </div>
+        <div className="demo-account">
+          <span>Username: demouser</span>
+          <span>Password: demodemo</span>
+        </div>
       </div>
       <div className="infoaboutapp">
         Cookese was created to learn useful kitchen tools! If the user gives
